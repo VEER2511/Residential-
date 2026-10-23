@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ROMS - Sign In</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page" data-page="login">
+  <main class="auth-card">
+    <a class="brand" href="/">ROMS</a>
+    <p class="eyebrow">Residential Operations &amp; Management System</p>
+    <h1>Welcome back</h1>
+    <p class="muted">Sign in to continue to your residence workspace.</p>
+    <div id="message" class="message" role="status" aria-live="polite"></div>
+    <form id="loginForm" novalidate>
+      <label for="email">Email address</label>
+      <input id="email" name="email" type="email" autocomplete="username" maxlength="120" required>
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" required>
+      <button class="button primary full" type="submit">Sign in</button>
+    </form>
+    <p class="auth-switch">New tenant? <a href="signup.html">Create an account</a></p>
+    <p class="demo-hint">Demo tenant: demo@pg.local / Tenant@123</p>
+  </main>
+  <script src="auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ROMS - Tenant Workspace</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="tenant">
+  <header class="topbar">
+    <a class="brand" href="tenant.html">ROMS</a>
+    <div class="topbar-right"><span id="welcomeName" class="muted"></span><a class="button outline" href="profile.html">My Profile</a><button class="button outline" data-logout>Log out</button></div>
+  </header>
+  <main class="page-wrap">
+    <section class="page-heading"><div><p class="eyebrow">Tenant workspace</p><h1>My residence</h1><p class="muted">Report problems, read notices and track your rent.</p></div><button class="button outline" id="refreshAll">Refresh</button></section>
+    <div id="message" class="message" role="status" aria-live="polite"></div>
+    <section class="stats-row three" aria-label="Summary">
+      <div class="stat-card"><span>My open complaints</span><strong id="openComplaintsCount">0</strong></div>
+      <div class="stat-card"><span>This month's rent</span><strong id="rentStatusText">-</strong></div>
+      <div class="stat-card"><span>Latest notice</span><strong id="latestNoticeText">-</strong></div>
+    </section>
+    <div class="student-layout">
+      <section class="panel">
+        <h2>Report a maintenance problem</h2>
+        <form id="complaintForm" novalidate>
+          <label for="title">Complaint title</label>
+          <input id="title" name="title" type="text" minlength="3" maxlength="100" placeholder="e.g. Geyser not heating" required>
+          <label for="category">Category</label>
+          <select id="category" name="category" required>
+            <option value="">Choose a category</option>
+            <option value="Plumbing">Plumbing</option>
+            <option value="Electrical">Electrical</option>
+            <option value="Housekeeping">Housekeeping</option>
+            <option value="Security">Security</option>
+            <option value="Other">Other</option>
+          </select>
+          <label for="room">Room number</label>
+          <input id="room" name="room" type="text" maxlength="20" placeholder="e.g. 101" required>
+          <label for="description">Description</label>
+          <textarea id="description" name="description" minlength="10" maxlength="1000" rows="4" placeholder="Explain what happened and where." required></textarea>
+          <label for="image">Photo attachment <span class="muted">(optional)</span></label>
+          <input id="image" name="image" type="file" accept="image/jpeg,image/png,image/webp">
+          <p class="field-hint">JPEG, PNG, or WebP up to 2 MB.</p>
+          <button class="button primary full" type="submit">Submit complaint</button>
+        </form>
+      </section>
+      <section class="panel">
+        <div class="section-title"><div><h2>My complaints</h2><p class="muted">Status updates from the owner appear here.</p></div></div>
+        <div id="complaintsList" class="issue-list"><p class="muted">Loading your complaints…</p></div>
+      </section>
+    </div>
+    <div class="two-col">
+      <section class="panel">
+        <div class="section-title"><div><h2>Notices</h2><p class="muted">Announcements from the owner.</p></div></div>
+        <div id="noticesList" class="issue-list"><p class="muted">Loading notices…</p></div>
+      </section>
+      <section class="panel">
+        <div class="section-title"><div><h2>My visitors</h2><p class="muted">Visitors logged for your room.</p></div></div>
+        <div id="visitorsList" class="issue-list"><p class="muted">Loading visitors…</p></div>
+      </section>
+    </div>
+    <section class="panel">
+      <div class="section-title"><div><h2>Rent history</h2><p class="muted">Monthly rent status for your room.</p></div></div>
+      <div id="rentsList" class="issue-list"><p class="muted">Loading rent records…</p></div>
+    </section>
+  </main>
+  <script src="tenant.js"></script>
+</body>
+</html>
